@@ -1,8 +1,19 @@
 import { Ionicons } from "@expo/vector-icons";
 import { Drawer } from "expo-router/drawer";
-import { colors } from "./theme";
+import { useLoadFonts } from "./hooks/useLoadFonts";
+import { colors, font } from "./theme";
 
 export default function RootLayout() {
+  const { fontsLoaded, fontError } = useLoadFonts();
+
+  if (fontError) {
+    throw fontError;
+  }
+
+  if (!fontsLoaded) {
+    return null;
+  }
+
   return (
     <Drawer
       screenOptions={{
@@ -13,7 +24,9 @@ export default function RootLayout() {
         },
         drawerActiveTintColor: colors.accent,
         drawerInactiveTintColor: colors.muted,
-        drawerLabelStyle: { fontWeight: "700" },
+        drawerLabelStyle: {
+          ...font("semibold"),
+        },
         sceneContainerStyle: { backgroundColor: colors.background },
       }}
     >

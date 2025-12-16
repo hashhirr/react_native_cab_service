@@ -8,7 +8,7 @@ import {
   View,
   ViewStyle,
 } from "react-native";
-import { colors, spacing } from "../theme";
+import { colors, font, spacing } from "../theme";
 
 type ScaffoldProps = {
   title: string;
@@ -77,12 +77,13 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   title: {
+    ...font("bold"),
     fontSize: 25,
-    fontWeight: "800",
     color: colors.text,
     letterSpacing: 0.3,
   },
   subtitle: {
+    ...font("regular"),
     fontSize: 15,
     color: colors.muted,
     lineHeight: 22,

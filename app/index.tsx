@@ -15,8 +15,9 @@ import MapView, {
   PROVIDER_GOOGLE,
   type MapStyleElement
 } from "react-native-maps";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { MenuToggle } from "./components/MenuToggle";
-import { colors, radii, shadow, spacing } from "./theme";
+import { colors, font, radii, shadow, spacing } from "./theme";
 
 const categories = [
   { label: "Mini", icon: "car-sport" as const },
@@ -28,16 +29,16 @@ const categories = [
 
 const suggestions = [
   {
-    title: "Mubarak Hotel",
-    subtitle: "Stadium Road, Rawalpindi",
+    title: "Circular Quay Station",
+    subtitle: "Alfred St, Sydney NSW",
   },
   {
-    title: "Signature Boys Hostel",
-    subtitle: "6th Road, Satellite Town",
+    title: "Bondi Beach",
+    subtitle: "Queen Elizabeth Dr, Bondi NSW",
   },
   {
-    title: "Fauji Colony",
-    subtitle: "Koral, Islamabad",
+    title: "Surry Hills",
+    subtitle: "Crown St, Surry Hills NSW",
   },
 ];
 
@@ -45,13 +46,13 @@ export default function Index() {
   const isWeb = Platform.OS === "web";
   const useGoogleMaps = Platform.OS === "android";
   const mapRegion = {
-    latitude: 33.6844,
-    longitude: 73.0479,
-    latitudeDelta: 0.25,
-    longitudeDelta: 0.2,
+    latitude: -33.8688,
+    longitude: 151.2093,
+    latitudeDelta: 0.18,
+    longitudeDelta: 0.18,
   };
   const mapHeight = Math.max(Dimensions.get("window").height * 0.64, 520);
-
+const {top, bottom} = useSafeAreaInsets();
   return (
     <SafeAreaView style={styles.container}>
       <View style={[styles.mapWrapper, { height: mapHeight }]}>
@@ -79,9 +80,9 @@ export default function Index() {
             rotateEnabled={false}
           >
             <Marker
-              coordinate={{ latitude: 33.6844, longitude: 73.0479 }}
+              coordinate={{ latitude: -33.8688, longitude: 151.2093 }}
               title="Pickup"
-              description="Islamabad"
+              description="Sydney CBD"
               pinColor={colors.accent}
             />
         
@@ -99,7 +100,9 @@ export default function Index() {
   
       </View>
 
-      <View style={styles.bottomSheet}>
+      <View style={[styles.bottomSheet,{
+        bottom:bottom
+      }]}>
         <View style={styles.handle} />
         <ScrollView
           horizontal
@@ -178,8 +181,8 @@ const styles = StyleSheet.create({
     borderColor: colors.border,
   },
   webLabelText: {
+    ...font("semibold"),
     color: colors.text,
-    fontWeight: "700",
   },
   topRow: {
     position: "absolute",
@@ -202,8 +205,8 @@ const styles = StyleSheet.create({
     // ...shadow,
   },
   statusText: {
+    ...font("bold"),
     color: colors.surface,
-    fontWeight: "800",
   },
   locateButton: {
     position: "absolute",
@@ -235,14 +238,14 @@ const styles = StyleSheet.create({
     ...shadow,
   },
   pickupLabel: {
+    ...font("semibold"),
     color: colors.muted,
     fontSize: 13,
-    fontWeight: "600",
   },
   pickupValue: {
+    ...font("bold"),
     color: colors.text,
     fontSize: 18,
-    fontWeight: "800",
   },
   centerPin: {
     position: "absolute",
@@ -300,8 +303,8 @@ const styles = StyleSheet.create({
     backgroundColor: colors.surface,
   },
   categoryText: {
+    ...font("semibold"),
     color: colors.text,
-    fontWeight: "700",
   },
   searchBar: {
     flexDirection: "row",
@@ -316,9 +319,9 @@ const styles = StyleSheet.create({
     marginBottom: spacing(1),
   },
   searchText: {
+    ...font("semibold"),
     color: colors.text,
     fontSize: 16,
-    fontWeight: "700",
   },
   suggestionRow: {
     flexDirection: "row",
@@ -327,11 +330,12 @@ const styles = StyleSheet.create({
     paddingVertical: spacing(0.75),
   },
   suggestionTitle: {
+    ...font("medium"),
     color: colors.text,
     fontSize: 16,
-    fontWeight: "600",
   },
   suggestionSubtitle: {
+    ...font("regular"),
     color: colors.muted,
     fontSize: 13,
   },
@@ -347,9 +351,9 @@ const styles = StyleSheet.create({
     bottom:5,
   },
   primaryText: {
+    ...font("bold"),
     color: colors.surface,
     fontSize: 16,
-    fontWeight: "700",
   },
 });
 

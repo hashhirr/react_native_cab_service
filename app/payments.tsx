@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from "react-native";
 import { GlassCard } from "./components/GlassCard";
 import { MenuToggle } from "./components/MenuToggle";
 import { Scaffold } from "./components/Scaffold";
-import { colors, radii, spacing } from "./theme";
+import { colors, font, radii, spacing } from "./theme";
 
 const cards = [
   { brand: "Midnight Visa", last4: "0912", tag: "Primary" },
@@ -11,9 +11,9 @@ const cards = [
 ];
 
 const history = [
-  { label: "Harbor transfer", amount: "-$18.40", time: "Tonight • 8:32 PM" },
-  { label: "Airport lounge", amount: "-$9.50", time: "Yesterday • 10:14 PM" },
-  { label: "Referral credit", amount: "+$12.00", time: "This week" },
+  { label: "Harbour transfer", amount: "-A$28.40", time: "Tonight • 8:32 PM" },
+  { label: "Airport lounge", amount: "-A$14.50", time: "Yesterday • 10:14 PM" },
+  { label: "Referral credit", amount: "+A$12.00", time: "This week" },
 ];
 
 export default function PaymentsScreen() {
@@ -33,7 +33,7 @@ export default function PaymentsScreen() {
         <View style={styles.row}>
           <View>
             <Text style={styles.sectionTitle}>Studio balance</Text>
-            <Text style={styles.balance}>$128.40</Text>
+            <Text style={styles.balance}>A$182.40</Text>
             <Text style={styles.muted}>Used for fast airport exits</Text>
           </View>
           <View style={styles.badge}>
@@ -44,7 +44,7 @@ export default function PaymentsScreen() {
         <View style={styles.balanceRow}>
           <View>
             <Text style={styles.balanceLabel}>Credit reserved</Text>
-            <Text style={styles.balanceValue}>$24.10</Text>
+            <Text style={styles.balanceValue}>A$36.10</Text>
           </View>
           <View>
             <Text style={styles.balanceLabel}>Rewards</Text>
@@ -117,8 +117,8 @@ const styles = StyleSheet.create({
     gap: spacing(0.5),
   },
   pillText: {
+    ...font("semibold"),
     color: colors.text,
-    fontWeight: "700",
   },
   row: {
     flexDirection: "row",
@@ -126,17 +126,18 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   sectionTitle: {
+    ...font("bold"),
     color: colors.text,
     fontSize: 18,
-    fontWeight: "800",
   },
   balance: {
+    ...font("bold"),
     color: colors.text,
     fontSize: 32,
-    fontWeight: "800",
     marginVertical: 6,
   },
   muted: {
+    ...font("regular"),
     color: colors.muted,
     fontSize: 13,
   },
@@ -150,21 +151,22 @@ const styles = StyleSheet.create({
     gap: spacing(0.5),
   },
   badgeText: {
+    ...font("bold"),
     color: colors.background,
-    fontWeight: "800",
   },
   balanceRow: {
     flexDirection: "row",
     justifyContent: "space-between",
   },
   balanceLabel: {
+    ...font("regular"),
     color: colors.muted,
     fontSize: 13,
   },
   balanceValue: {
+    ...font("bold"),
     color: colors.text,
     fontSize: 18,
-    fontWeight: "800",
     marginTop: 4,
   },
   cardRow: {
@@ -182,8 +184,8 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   cardTitle: {
+    ...font("bold"),
     color: colors.text,
-    fontWeight: "800",
     fontSize: 15,
   },
   tag: {
@@ -194,8 +196,8 @@ const styles = StyleSheet.create({
     paddingVertical: spacing(0.4),
   },
   tagText: {
+    ...font("semibold"),
     color: colors.muted,
-    fontWeight: "700",
   },
   historyRow: {
     flexDirection: "row",
@@ -203,13 +205,13 @@ const styles = StyleSheet.create({
     gap: spacing(1),
   },
   historyTitle: {
+    ...font("bold"),
     color: colors.text,
-    fontWeight: "800",
     fontSize: 15,
   },
   historyAmount: {
+    ...font("bold"),
     color: colors.text,
-    fontWeight: "800",
     fontSize: 15,
   },
 });

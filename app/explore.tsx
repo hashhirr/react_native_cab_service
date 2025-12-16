@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from "react-native";
 import { GlassCard } from "./components/GlassCard";
 import { MenuToggle } from "./components/MenuToggle";
 import { Scaffold } from "./components/Scaffold";
-import { colors, radii, spacing } from "./theme";
+import { colors, font, radii, spacing } from "./theme";
 
 const pickupSpots = [
   { title: "Creative Pier", eta: "2 min", tone: colors.accent },
@@ -95,8 +95,8 @@ const styles = StyleSheet.create({
     gap: spacing(0.5),
   },
   liveText: {
+    ...font("bold"),
     color: colors.background,
-    fontWeight: "800",
   },
   row: {
     flexDirection: "row",
@@ -105,11 +105,12 @@ const styles = StyleSheet.create({
     gap: spacing(1),
   },
   sectionTitle: {
+    ...font("bold"),
     color: colors.text,
     fontSize: 18,
-    fontWeight: "800",
   },
   muted: {
+    ...font("regular"),
     color: colors.muted,
     fontSize: 14,
     marginTop: 2,
@@ -170,9 +171,9 @@ const styles = StyleSheet.create({
     borderColor: colors.border,
   },
   value: {
+    ...font("semibold"),
     color: colors.text,
     fontSize: 18,
-    fontWeight: "700",
     marginTop: 6,
   },
   countPill: {
@@ -183,8 +184,8 @@ const styles = StyleSheet.create({
     borderColor: colors.border,
   },
   countText: {
+    ...font("semibold"),
     color: colors.muted,
-    fontWeight: "700",
     letterSpacing: 0.2,
   },
   spotRow: {
@@ -201,14 +202,14 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   spotTitle: {
+    ...font("bold"),
     color: colors.text,
-    fontWeight: "800",
     fontSize: 15,
     marginBottom: 2,
   },
   spotEta: {
+    ...font("bold"),
     color: colors.highlight,
-    fontWeight: "800",
     fontSize: 14,
   },
 });

@@ -3,17 +3,17 @@ import { Pressable, StyleSheet, Text, View } from "react-native";
 import { GlassCard } from "./components/GlassCard";
 import { MenuToggle } from "./components/MenuToggle";
 import { Scaffold } from "./components/Scaffold";
-import { colors, radii, spacing } from "./theme";
+import { colors, font, radii, spacing } from "./theme";
 
 const stops = [
-  { title: "Pickup", place: "Arts District Loft", time: "8:05 PM" },
-  { title: "Drop-off", place: "Harbor Terminal C", time: "8:32 PM" },
+  { title: "Pickup", place: "Surry Hills Studio", time: "8:05 PM" },
+  { title: "Drop-off", place: "Barangaroo Wharf", time: "8:32 PM" },
 ];
 
 const options = [
-  { title: "Studio Pool", eta: "3 min", price: "$14.40", seats: 2 },
-  { title: "Prime", eta: "4 min", price: "$19.80", seats: 3 },
-  { title: "Executive", eta: "6 min", price: "$32.00", seats: 3 },
+  { title: "Studio Pool", eta: "3 min", price: "A$21.40", seats: 2 },
+  { title: "Prime", eta: "4 min", price: "A$27.80", seats: 3 },
+  { title: "Executive", eta: "6 min", price: "A$42.00", seats: 3 },
 ];
 
 export default function RideScreen() {
@@ -119,13 +119,13 @@ const styles = StyleSheet.create({
     gap: spacing(0.5),
   },
   pillText: {
+    ...font("semibold"),
     color: colors.highlight,
-    fontWeight: "700",
   },
   sectionTitle: {
+    ...font("bold"),
     color: colors.text,
     fontSize: 18,
-    fontWeight: "800",
   },
   stopRow: {
     flexDirection: "row",
@@ -137,17 +137,18 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   stopTitle: {
+    ...font("bold"),
     color: colors.text,
-    fontWeight: "800",
     fontSize: 15,
   },
   stopPlace: {
+    ...font("regular"),
     color: colors.muted,
     fontSize: 13,
   },
   stopTime: {
+    ...font("semibold"),
     color: colors.highlight,
-    fontWeight: "700",
   },
   timeline: {
     height: 6,
@@ -166,6 +167,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   muted: {
+    ...font("regular"),
     color: colors.muted,
     fontSize: 13,
   },
@@ -188,13 +190,13 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   optionTitle: {
+    ...font("bold"),
     color: colors.text,
-    fontWeight: "800",
     fontSize: 15,
   },
   optionPrice: {
+    ...font("bold"),
     color: colors.text,
-    fontWeight: "800",
     fontSize: 16,
   },
   scheduleRow: {
@@ -202,12 +204,13 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   scheduleLabel: {
+    ...font("regular"),
     color: colors.muted,
     fontSize: 13,
   },
   scheduleValue: {
+    ...font("bold"),
     color: colors.text,
-    fontWeight: "800",
     fontSize: 16,
   },
   primary: {
@@ -221,8 +224,8 @@ const styles = StyleSheet.create({
    
   },
   primaryText: {
+    ...font("semibold"),
     color: colors.background,
-    fontWeight: "700",
     fontSize: 15,
   },
 });

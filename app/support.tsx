@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from "react-native";
 import { GlassCard } from "./components/GlassCard";
 import { MenuToggle } from "./components/MenuToggle";
 import { Scaffold } from "./components/Scaffold";
-import { colors, radii, spacing } from "./theme";
+import { colors, font, radii, spacing } from "./theme";
 
 const faqs = [
   "How do I share an ETA link?",
@@ -90,8 +90,8 @@ const styles = StyleSheet.create({
     gap: spacing(0.5),
   },
   pillText: {
+    ...font("bold"),
     color: colors.background,
-    fontWeight: "800",
   },
   row: {
     flexDirection: "row",
@@ -99,11 +99,12 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   sectionTitle: {
+    ...font("bold"),
     color: colors.text,
     fontSize: 18,
-    fontWeight: "800",
   },
   muted: {
+    ...font("regular"),
     color: colors.muted,
     fontSize: 13,
   },
@@ -122,13 +123,13 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   avatarText: {
+    ...font("bold"),
     color: colors.background,
-    fontWeight: "800",
     fontSize: 18,
   },
   assistTitle: {
+    ...font("bold"),
     color: colors.text,
-    fontWeight: "800",
     fontSize: 15,
   },
   faqRow: {
@@ -137,8 +138,8 @@ const styles = StyleSheet.create({
     gap: spacing(0.75),
   },
   faqText: {
+    ...font("semibold"),
     color: colors.text,
-    fontWeight: "700",
     fontSize: 14,
   },
   flagRow: {
@@ -147,8 +148,8 @@ const styles = StyleSheet.create({
     gap: spacing(0.75),
   },
   flagText: {
+    ...font("semibold"),
     color: colors.text,
-    fontWeight: "700",
     fontSize: 14,
   },
 });

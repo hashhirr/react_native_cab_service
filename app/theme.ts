@@ -1,3 +1,5 @@
+import { TextStyle } from "react-native";
+
 export const colors = {
   background: "#f7f4ed",
   surface: "#ffffff",
@@ -30,3 +32,16 @@ export const shadow = {
   shadowOffset: { width: 0, height: 8 },
   elevation: 6,
 };
+
+export const fonts = {
+  regular: "RedHatDisplay-Regular",
+  medium: "RedHatDisplay-Medium",
+  semibold: "RedHatDisplay-SemiBold",
+  bold: "RedHatDisplay-Bold",
+};
+
+export const font = (
+  weight: keyof typeof fonts = "regular",
+): Pick<TextStyle, "fontFamily"> => ({
+  fontFamily: fonts[weight],
+});

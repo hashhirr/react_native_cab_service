@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from "react-native";
 import { GlassCard } from "./components/GlassCard";
 import { MenuToggle } from "./components/MenuToggle";
 import { Scaffold } from "./components/Scaffold";
-import { colors, radii, spacing } from "./theme";
+import { colors, font, radii, spacing } from "./theme";
 
 const drivers = [
   {
@@ -120,13 +120,13 @@ const styles = StyleSheet.create({
     gap: spacing(0.5),
   },
   rightText: {
+    ...font("semibold"),
     color: colors.text,
-    fontWeight: "700",
   },
   sectionTitle: {
+    ...font("bold"),
     color: colors.text,
     fontSize: 18,
-    fontWeight: "800",
   },
   progressTrack: {
     height: 10,
@@ -155,10 +155,12 @@ const styles = StyleSheet.create({
     backgroundColor: colors.border,
   },
   stepText: {
+    ...font("medium"),
     color: colors.muted,
     fontSize: 12,
   },
   subCopy: {
+    ...font("regular"),
     color: colors.muted,
     fontSize: 14,
     lineHeight: 20,
@@ -178,16 +180,17 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   avatarText: {
+    ...font("bold"),
     color: colors.background,
-    fontWeight: "800",
     fontSize: 18,
   },
   driverName: {
+    ...font("bold"),
     color: colors.text,
-    fontWeight: "800",
     fontSize: 15,
   },
   driverMeta: {
+    ...font("regular"),
     color: colors.muted,
     fontSize: 13,
   },
@@ -201,13 +204,13 @@ const styles = StyleSheet.create({
     paddingVertical: spacing(0.35),
   },
   ratingText: {
+    ...font("bold"),
     color: colors.background,
-    fontWeight: "800",
     fontSize: 12,
   },
   eta: {
+    ...font("semibold"),
     color: colors.accentSoft,
-    fontWeight: "700",
   },
   note: {
     flexDirection: "row",
@@ -216,8 +219,8 @@ const styles = StyleSheet.create({
     paddingVertical: spacing(0.5),
   },
   noteText: {
+    ...font("semibold"),
     color: colors.text,
-    fontWeight: "700",
     fontSize: 14,
   },
 });

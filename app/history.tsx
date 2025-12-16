@@ -3,12 +3,12 @@ import { StyleSheet, Text, View } from "react-native";
 import { GlassCard } from "./components/GlassCard";
 import { MenuToggle } from "./components/MenuToggle";
 import { Scaffold } from "./components/Scaffold";
-import { colors, radii, spacing } from "./theme";
+import { colors, font, radii, spacing } from "./theme";
 
 const trips = [
-  { name: "Old Town → Harbor", time: "Tonight, 8:32 PM", fare: "$18.40" },
-  { name: "Studio → Terminal B", time: "Yesterday, 10:14 PM", fare: "$22.10" },
-  { name: "Hotel → Arts District", time: "Last week", fare: "$12.60" },
+  { name: "Surry Hills → Circular Quay", time: "Tonight, 8:32 PM", fare: "A$28.40" },
+  { name: "Bondi → Sydney Airport T2", time: "Yesterday, 10:14 PM", fare: "A$34.10" },
+  { name: "Barangaroo → Newtown", time: "Last week", fare: "A$18.60" },
 ];
 
 export default function HistoryScreen() {
@@ -37,7 +37,7 @@ export default function HistoryScreen() {
           </View>
           <View>
             <Text style={styles.label}>Spend</Text>
-            <Text style={styles.value}>$154</Text>
+            <Text style={styles.value}>A$186</Text>
           </View>
         </View>
         <View style={styles.timeline}>
@@ -82,26 +82,27 @@ const styles = StyleSheet.create({
     gap: spacing(0.5),
   },
   pillText: {
+    ...font("bold"),
     color: colors.background,
-    fontWeight: "800",
   },
   sectionTitle: {
+    ...font("bold"),
     color: colors.text,
     fontSize: 18,
-    fontWeight: "800",
   },
   overviewRow: {
     flexDirection: "row",
     justifyContent: "space-between",
   },
   label: {
+    ...font("regular"),
     color: colors.muted,
     fontSize: 13,
   },
   value: {
+    ...font("bold"),
     color: colors.text,
     fontSize: 18,
-    fontWeight: "800",
     marginTop: 4,
   },
   timeline: {
@@ -116,6 +117,7 @@ const styles = StyleSheet.create({
     backgroundColor: colors.accent,
   },
   muted: {
+    ...font("regular"),
     color: colors.muted,
     fontSize: 13,
   },
@@ -146,13 +148,13 @@ const styles = StyleSheet.create({
     marginTop: spacing(0.5),
   },
   tripName: {
+    ...font("bold"),
     color: colors.text,
-    fontWeight: "800",
     fontSize: 15,
   },
   tripFare: {
+    ...font("bold"),
     color: colors.text,
-    fontWeight: "800",
     fontSize: 15,
   },
 });
